@@ -14,7 +14,11 @@ import {
     Input,
     FormErrorMessage,
     Divider,
-    useToast
+    useToast,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
 } from '@chakra-ui/core'
 
 
@@ -97,18 +101,26 @@ const EditSchool = () => {
                                 )}
                             </Field>
                             <Box
-                                display={{ base: 'block', sm: 'block', md: 'flex' }}
-                                justifyContent='space-between'
+                                display= 'flex' 
+                                flexDirection='column'
+                                flexWrap='wrap-reverse'
                             >
                                 <Button
                                     variantColor='blue'
                                     type='submit'
-                                    minW={{ base: '100%', sm: '100%', md: '200px' }}
+                                    borderRadius={{base:'99px',sm:'0'}}
+                                    w={{base:'90px',sm:'200px'}}
+                                    // minW= '200px' 
                                     mr={3}
                                     mt={8}
+                                    mb={8}
                                 >
                                     修改
                                 </Button>
+                                <Alert status="warning">
+                                    <AlertIcon />               
+                                    删除后全部学校数据都会被删除，是否删除!
+                                </Alert>
                                 <DeleteAlert
                                     title='刪除提示'
                                     content={`是否確定删除學校`}
@@ -119,9 +131,9 @@ const EditSchool = () => {
                                 >
                                     <Button
                                         variantColor='red'
-                                        minW={{ base: '100%', sm: '100%', md: '200px' }}
+                                        minW='100%'
+                                        borderRadius={{base:'99px',sm:'0'}}
                                         mr={3}
-                                        mt={8}
                                     >
                                         刪除
                                     </Button>

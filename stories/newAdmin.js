@@ -34,7 +34,8 @@ import {
     TabList,
     TabPanels,
     Tab,
-    TabPanel
+    TabPanel,
+    Flex
 } from '@chakra-ui/core'
 
 import MyImage from "../static/QQ20200518181405.jpg"
@@ -90,6 +91,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: true,
             isStudent: false,
+            idiograph:'这是一个老师',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -104,6 +106,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -118,6 +121,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -132,6 +136,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -146,6 +151,7 @@ const newAdmin = () => {
             isDirector: true,
             isTeacher: false,
             isStudent: false,
+            idiograph:'这是一个班级负责人',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -160,6 +166,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: false,
+            idiograph:'这是一个管理员',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -174,6 +181,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: true,
             isStudent: false,
+            idiograph:'这是一个老师',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -188,6 +196,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -202,6 +211,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -216,6 +226,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -230,6 +241,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -244,6 +256,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -258,6 +271,7 @@ const newAdmin = () => {
             isDirector: false,
             isTeacher: false,
             isStudent: true,
+            idiograph:'这是一个学生',
             currentClsMember: {
                 num: 1,
                 cls: {
@@ -306,11 +320,11 @@ const newAdmin = () => {
                                     <TabPanel>
                                         <Button
                                             w='70px'
-                                            h='30px'
+                                            h='36px'
                                             position='relative'
-                                            left={['83%', '87%', '87%', '90%']}
+                                            left={['77%', '87%', '87%', '90%']}
                                             color='black'
-                                            transform='translate(5px, -110%)'
+                                            transform='translate(5px, -1%)'
                                             onClick={onAdminOpen}
                                         // transform='translate(11px, -50%)'
                                         // rightIcon='chevron-down'
@@ -359,12 +373,11 @@ const newAdmin = () => {
                                                                                     <Text mt={4} fontWeight="bold">
                                                                                         {item.name}
                                                                                         <Badge ml={3} fontSize="xs">
-                                                                                            Follows you
+                                                                                        {item.isAdmin ? '管理員' : ''}
                                                                                     </Badge>
                                                                                     </Text>
                                                                                     <Text mt={3}>
-                                                                                        Infinite Builder working on DX @Netlify. Helping people
-                                                                                        #LearnInPublic
+                                                                                        {item.idiograph}
                                                                                 </Text>
                                                                                 </Box>
                                                                             </PopoverContent>
@@ -416,9 +429,9 @@ const newAdmin = () => {
                                             w='70px'
                                             h='30px'
                                             position='relative'
-                                            left={['83%', '87%', '87%', '90%']}
+                                            left={['77%', '87%', '87%', '90%']}
                                             color='black'
-                                            transform='translate(5px, -110%)'
+                                            transform='translate(5px, -1%)'
                                             onClick={onDirectorOpen}
                                         // transform='translate(11px, -50%)'
                                         // rightIcon='chevron-down'
@@ -467,12 +480,11 @@ const newAdmin = () => {
                                                                                     <Text mt={4} fontWeight="bold">
                                                                                         {item.name}
                                                                                         <Badge ml={3} fontSize="xs">
-                                                                                            Follows you
+                                                                                        {item.isDirector ? '学校負責人' : ''}
                                                                                     </Badge>
                                                                                     </Text>
                                                                                     <Text mt={3}>
-                                                                                        Infinite Builder working on DX @Netlify. Helping people
-                                                                                        #LearnInPublic
+                                                                                        {item.idiograph}
                                                                                 </Text>
                                                                                 </Box>
                                                                             </PopoverContent>
@@ -524,9 +536,9 @@ const newAdmin = () => {
                                             w='70px'
                                             h='30px'
                                             position='relative'
-                                            left={['83%', '87%', '87%', '90%']}
+                                            left={['77%', '87%', '87%', '90%']}
                                             color='black'
-                                            transform='translate(5px, -110%)'
+                                            transform='translate(5px, -1%)'
                                             onClick={onTeacherOpen}
                                         >
                                             <NewAdminModal
@@ -573,12 +585,11 @@ const newAdmin = () => {
                                                                                     <Text mt={4} fontWeight="bold">
                                                                                         {item.name}
                                                                                         <Badge ml={3} fontSize="xs">
-                                                                                            Follows you
+                                                                                        {item.isTeacher ? '老師' : ''}
                                                                                     </Badge>
                                                                                     </Text>
                                                                                     <Text mt={3}>
-                                                                                        Infinite Builder working on DX @Netlify. Helping people
-                                                                                        #LearnInPublic
+                                                                                        {item.idiograph}
                                                                                 </Text>
                                                                                 </Box>
                                                                             </PopoverContent>
@@ -630,9 +641,9 @@ const newAdmin = () => {
                                             w='70px'
                                             h='30px'
                                             position='relative'
-                                            left={['83%', '87%', '87%', '90%']}
+                                            left={['77%', '87%', '87%', '90%']}
                                             color='black'
-                                            transform='translate(5px, -110%)'
+                                            transform='translate(5px, -1%)'
                                             onClick={onStudentOpen}
                                         // rightIcon='chevron-down'
                                         >
@@ -679,12 +690,11 @@ const newAdmin = () => {
                                                                                     <Text mt={4} fontWeight="bold">
                                                                                         {item.name}
                                                                                         <Badge ml={3} fontSize="xs">
-                                                                                            Follows you
+                                                                                        {item.isStudent ? '学生' :''}
                                                                                     </Badge>
                                                                                     </Text>
                                                                                     <Text mt={3}>
-                                                                                        Infinite Builder working on DX @Netlify. Helping people
-                                                                                        #LearnInPublic
+                                                                                        {item.idiograph}
                                                                                 </Text>
                                                                                 </Box>
                                                                             </PopoverContent>
