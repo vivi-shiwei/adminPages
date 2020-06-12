@@ -4,6 +4,7 @@ import { Formik, Field, Form } from 'formik'
 import NewBgLayout, { NewInputHeader } from '../conponents/newBgLayout'
 import App from '../App'
 import LinkNext from 'next/link'
+import DeleteAlert from '../conponents/deleteAlert'
 
 import {
     Box,
@@ -108,14 +109,23 @@ const EditSchool = () => {
                                 >
                                     修改
                                 </Button>
-                                <Button
-                                    variantColor='red'
-                                    minW={{ base: '100%', sm: '100%', md: '200px' }}
-                                    mr={3}
-                                    mt={8}
+                                <DeleteAlert
+                                    title='刪除提示'
+                                    content={`是否確定删除學校`}
+                                    toastTitle='删除學校錯誤'
+                                    backurl={{
+                                        href: '/school'
+                                    }}
                                 >
-                                    刪除
+                                    <Button
+                                        variantColor='red'
+                                        minW={{ base: '100%', sm: '100%', md: '200px' }}
+                                        mr={3}
+                                        mt={8}
+                                    >
+                                        刪除
                                     </Button>
+                                </DeleteAlert>
                             </Box>
                         </Form>
                     )}

@@ -10,7 +10,10 @@ import {
     List,
     ListItem,
     Divider,
-    ListIcon
+    ListIcon,
+    RadioGroup,
+    Radio,
+    Stack
 } from '@chakra-ui/core'
 
 const SchoolAdminPage = () => {
@@ -33,8 +36,15 @@ const SchoolAdminPage = () => {
 
                 <Box as='article' pl='5%'>
                     <Heading fontSize={{ base: '14px', sm: '1rem' }} my={4}>你是一個管理員, 所以你可以擁有以下操作…</Heading>
-
-                    <List spacing={3}>
+                    <Stack>
+                        <Radio variantColor="green" name="1" value="1">
+                            修改學校
+                    </Radio>
+                        <Radio variantColor="green" name="1" value="2">
+                            新增/刪除學校用戶
+                    </Radio>
+                    </Stack>
+                    {/* <List spacing={3}>
                         <ListItem className='admin-list-item'>
                             <LinkNext href='/school'>
                                 <Box as='a' href='#'>
@@ -51,7 +61,7 @@ const SchoolAdminPage = () => {
                 </Box>
                             </LinkNext>
                         </ListItem>
-                    </List>
+                    </List> */}
                 </Box>
             </Box>
         </NewBgLayout>

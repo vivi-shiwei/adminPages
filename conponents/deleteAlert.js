@@ -41,9 +41,8 @@ const DelAlert = (props) => {
                         </Button>
                         <Button
                             variantColor='red'
-                            onClick={() =>
-                                console.log('tgrfg')
-                            } ml={3}
+                            onClick={onClose}
+                            ml={3}
                         >
                             删除
                         </Button>
